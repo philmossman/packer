@@ -44,6 +44,7 @@ source "proxmox" "ubuntu-server-jammy-docker" {
 
     # VM System Settings
     qemu_agent = true
+    os = "l26"
 
     # VM Hard Disk Settings
     scsi_controller = "virtio-scsi-pci"

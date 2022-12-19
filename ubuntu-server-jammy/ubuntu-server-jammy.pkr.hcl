@@ -47,7 +47,7 @@ source "proxmox" "ubuntu-server-jammy" {
   os = "l26"
 
   # VM Hard Disk Settings
-  scsi_controller = "virtio-scsi-pci"
+  scsi_controller = "virtio-scsi-single"
 
   disks {
       disk_size = "20G"
@@ -55,6 +55,8 @@ source "proxmox" "ubuntu-server-jammy" {
       storage_pool = "local"
       storage_pool_type = "lvm"
       type = "virtio"
+      cache = "writeback"
+      io_thread = true
   }
 
   # VM CPU Settings

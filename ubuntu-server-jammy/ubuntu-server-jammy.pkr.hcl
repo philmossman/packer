@@ -55,7 +55,7 @@ source "proxmox" "ubuntu-server-jammy" {
       storage_pool = "local"
       storage_pool_type = "lvm"
       type = "virtio"
-      cache = "writeback"
+      cache_mode = "writeback"
       io_thread = true
   }
 

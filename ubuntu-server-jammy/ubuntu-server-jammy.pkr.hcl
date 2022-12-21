@@ -45,18 +45,20 @@ source "proxmox" "ubuntu-server-jammy" {
   # VM System Settings
   qemu_agent = true
   os = "l26"
+  bios = "ovmf"
+  efidisk = "local"
+  machine = "q35"
 
   # VM Hard Disk Settings
-  scsi_controller = "virtio-scsi-single"
+  scsi_controller = "virtio-scsi"
 
   disks {
       disk_size = "20G"
       format = "qcow2"
       storage_pool = "local"
       storage_pool_type = "lvm"
-      type = "virtio"
+      type = "scsi"
       cache_mode = "writeback"
-      io_thread = true
   }
 
   # VM CPU Settings
